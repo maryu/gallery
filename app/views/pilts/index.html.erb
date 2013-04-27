@@ -1,0 +1,29 @@
+<h1>Listing pilts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Picture</th>
+    <th>Rating</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pilts.each do |pilt| %>
+  <tr>
+    <td><%= pilt.name %></td>
+    <td><%= pilt.description %></td>
+    <td><%= pilt.picture %></td>
+    <td><%= pilt.rating %></td>
+    <td><%= link_to 'Show', pilt %></td>
+    <td><%= link_to 'Edit', edit_pilt_path(pilt) %></td>
+    <td><%= link_to 'Destroy', pilt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pilt', new_pilt_path %>
